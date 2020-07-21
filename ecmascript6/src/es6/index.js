@@ -79,3 +79,80 @@ const a = 'b';
 console.log(a);
 a = 'a';
 console.log(a);
+
+//Objects
+
+let name = 'Gerardo';
+let age = 22;
+
+//es5
+b_obj = { name: name, age: age };
+
+//es6
+a_obj = { name, age };
+
+console.log(b_obj);
+console.log(a_obj);
+
+//Arrow functions
+
+const names = [
+  { name: 'Gerardo', age: 22}
+  { name: 'Roberto', age: 23}
+  { name: 'Humberto', age: 22}
+]
+
+let b_listOfNames = names.map(function(item){
+  console.log(item.name);
+})
+
+let a_listOfNames = names.map(item => console.log(item.name));
+
+const c_listOfNames = (name, age) => {
+  ...
+}
+
+const d_listOfNamaes = name => {
+  ...
+}
+
+const square = num => num * num;
+
+//Promise
+
+const helloPromise = () => {
+   return new Promise((resolve, reject) => {
+     if (true) {
+       resolve('Hey!');
+     } else {
+       reject('Oops!');
+     }
+   })
+}
+
+helloPromise()
+  .then(response => console.log(response))
+  .then(() => console.log('Hi'))
+  .catch(error => console.log(error));
+
+//class
+
+class Calculator {
+  constructor() {
+    this.a_value = 0;
+    this.b_value = 0;
+  }
+  sum(a_value, b_value){
+    this.a_value = a_value;
+    this.b_value = b_value;
+
+    return this.a_value + this.b_value;
+  }
+}
+
+const calc = new Calculator();
+console.log(calc.sum(2, 2));
+
+import { hello } from './module';
+
+hello();
